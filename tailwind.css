@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #0d1117; /* Deep technical foundation */
+  --color-secondary: #21262d; /* Subtle interface layering */
+  --color-accent: #0ea5e9; /* Interactive focus moments - sky-500 */
+  
+  /* Background Colors */
+  --color-background: #ffffff; /* Clean content canvas - white */
+  --color-surface: #f8fafc; /* Gentle content separation - slate-50 */
+  
+  /* Text Colors */
+  --color-text-primary: #1f2937; /* Extended reading comfort - gray-800 */
+  --color-text-secondary: #6b7280; /* Clear information hierarchy - gray-500 */
+  
+  /* Status Colors */
+  --color-success: #10b981; /* Positive system feedback - emerald-500 */
+  --color-warning: #f59e0b; /* Attention without alarm - amber-500 */
+  --color-error: #ef4444; /* Clear problem indication - red-500 */
+  
+  /* Additional Utility Colors */
+  --color-border: #e5e7eb; /* Form inputs and content separation - gray-200 */
+  --color-border-focus: #0ea5e9; /* Active states - sky-500 */
+  --color-hover: #f3f4f6; /* Subtle hover states - gray-100 */
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface text-text-primary border border-border px-6 py-3 rounded-lg font-semibold transition-all duration-300 ease-in-out hover:bg-hover hover:shadow-md focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50;
+  }
+  
+  .card {
+    @apply bg-background rounded-lg shadow-sm border border-border p-6 transition-all duration-300 ease-in-out hover:shadow-md;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-border rounded-lg focus:border-accent focus:ring-2 focus:ring-accent focus:ring-opacity-20 transition-all duration-200 ease-in-out outline-none;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent;
+  }
+  
+  .shadow-subtle {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 600ms ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 600ms ease-in-out;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .transition-smooth {
+    transition: all 300ms ease-in-out;
+  }
+  
+  .transition-quick {
+    transition: all 200ms ease-in-out;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .div[style*="position: fixed"][style*="bottom: 0px"][style*="right: 0px"] {
+  display: none !important;
+}
+
+
+
+}
